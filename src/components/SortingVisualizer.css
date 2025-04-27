@@ -1,0 +1,220 @@
+:root {
+  /* Futuristic Color Palette */
+  --primary-bg: #0a0a1a;
+  --secondary-bg: #1a1a2a;
+  --neon-cyan: #00ffff;
+  --neon-purple: #8a2be2;
+  --neon-green: #39ff14;
+  --dark-blue: #0033cc;
+  --text-color: #e0e0ff;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.visualizer {
+  background: rgba(10, 10, 26, 0.8);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(138, 43, 226, 0.2);
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 50, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid var(--neon-cyan);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  background: rgba(0, 0, 30, 0.7);
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
+.input-box:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--neon-cyan);
+  transform: scale(1.02);
+}
+
+.action-button {
+  background: linear-gradient(45deg, var(--dark-blue), var(--neon-cyan));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown select, .dropdown input[type="range"] {
+  background: rgba(0, 0, 30, 0.7);
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+}
+
+.block-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 30, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  width: 100%;
+  min-height: 150px;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(0, 0, 50, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: var(--neon-cyan);
+  text-align: center;
+  width: 100%;
+}
+
+.chart-container {
+  background: rgba(0, 0, 50, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px solid var(--neon-cyan);
+  width: 100%;
+}
+
+.complexity-chart {
+  margin-top: 20px;
+  background: rgba(0, 0, 50, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid var(--neon-purple);
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+  }
+  
+  .block {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px currentColor;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+  }
+}
+
+.highlight {
+  animation: highlight 0.5s ease;
+}
+
+.message-container {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 50, 0.3);
+  border-radius: 10px;
+  border: 1px solid var(--neon-cyan);
+}

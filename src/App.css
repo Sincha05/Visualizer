@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #282c34;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  padding: 20px;
+  text-align: center;
+  background-color: #20232a;
+}
+
+.navbar button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: teal;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.visualizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.bar-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-end;
+  height: 500px;
+}
