@@ -54,26 +54,6 @@ function SortingVisualizer() {
     setSelectedAlgorithm(e.target.value);
     setComparisons(0);
     setMessage(`You selected ${e.target.value}!`);
-
-    switch (e.target.value) {
-      case 'Bubble Sort':
-      case 'Selection Sort':
-      case 'Insertion Sort':
-        setTimeComplexity("O(n²)");
-        setSpaceComplexity("O(1)");
-        break;
-      case 'Merge Sort':
-        setTimeComplexity("O(n log n)");
-        setSpaceComplexity("O(n)");
-        break;
-      case 'Quick Sort':
-        setTimeComplexity("O(n log n) avg, O(n²) worst");
-        setSpaceComplexity("O(log n)");
-        break;
-      default:
-        setTimeComplexity("");
-        setSpaceComplexity("");
-    }
   };
 
   const handleInputChange = (e) => {

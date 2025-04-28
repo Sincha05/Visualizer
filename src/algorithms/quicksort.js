@@ -17,7 +17,7 @@ function quickSortHelper(array, low, high, animations) {
 function partition(array, low, high, animations) {
   let pivot = array[high];
   let i = low - 1;
-
+  animations.push({ type: "pivot", index: high });
   for (let j = low; j <= high - 1; j++) {
     animations.push({ type: "compare", indices: [j, high] });
 

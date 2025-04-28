@@ -21,6 +21,9 @@ function merge(mainArray, start, mid, end, auxArray, animations) {
   let i = start;
   let j = mid + 1;
 
+  animations.push({ type: "mergeStart", indices: [start, end] });
+
+
   while (i <= mid && j <= end) {
     animations.push({ type: "compare", indices: [i, j] });
 
